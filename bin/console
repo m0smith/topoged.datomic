@@ -1,0 +1,4 @@
+#!/bin/sh
+
+bin/console.cmd -p 8089 topoged datomic:free://localhost:4334/
+

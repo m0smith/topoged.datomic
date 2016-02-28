@@ -1,0 +1,2 @@
+#!bin/sh
+bin/transactor.cmd config/samples/free-transactor-template.properties
