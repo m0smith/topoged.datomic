@@ -1,0 +1,190 @@
+[
+ ;; concept attributes
+ {:db/id #db/id[:db.part/db]
+  :db/ident :concept/id
+  :db/valueType :db.type/uuid
+  :db/cardinality :db.cardinality/one
+  :db/unique :db.unique/identity
+  :db/index true
+  :db/doc "The globally unique ID for a concept"
+  :db.install/_attribute :db.part/db}
+ 
+ {:db/id #db/id[:db.part/db]
+  :db/ident :concept/name
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/doc "A short descriptive name for the concept"
+  :db.install/_attribute :db.part/db}
+
+  {:db/id #db/id[:db.part/db]
+   :db/ident :concept/key
+   :db/valueType :db.type/keyword
+   :db/unique :db.unique/value
+   :db/cardinality :db.cardinality/one
+   :db/doc "A unique key to reference the concept by name"
+   :db.install/_attribute :db.part/db}
+
+ 
+ {:db/id #db/id[:db.part/db]
+  :db/ident :concept/representations
+  :db/valueType :db.type/ref
+  :db/cardinality :db.cardinality/many
+  :db/doc "The represenations of a concept"
+  :db.install/_attribute :db.part/db}
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :concept/domains
+  :db/valueType :db.type/ref
+  :db/cardinality :db.cardinality/many
+  :db/doc "The domains of a concept"
+  :db.install/_attribute :db.part/db}
+
+
+
+ ;; domain attributes
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :domain/id
+  :db/valueType :db.type/uuid
+  :db/cardinality :db.cardinality/one
+  :db/doc "The globally unique ID for a domain"
+  :db.install/_attribute :db.part/db}
+
+
+  {:db/id #db/id[:db.part/db]
+   :db/ident :domain/concept
+   :db/valueType :db.type/ref
+   :db/cardinality :db.cardinality/one
+   :db/doc "The types of the domain"
+   :db.install/_attribute :db.part/db}
+
+   {:db/id #db/id[:db.part/db]
+   :db/ident :domain/name
+   :db/valueType :db.type/string
+   :db/cardinality :db.cardinality/one
+   :db/doc "The name of the domain"
+   :db.install/_attribute :db.part/db}
+
+
+   {:db/id #db/id[:db.part/db]
+   :db/ident :domain/members
+   :db/valueType :db.type/ref
+   :db/cardinality :db.cardinality/many
+   :db/doc "The members of the domain"
+   :db.install/_attribute :db.part/db}
+
+ 
+ ;; representation attributes
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :representation/id
+  :db/valueType :db.type/uuid
+  :db/cardinality :db.cardinality/one
+  :db/doc "The globally unique ID for a representation"
+  :db.install/_attribute :db.part/db}
+
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :representation/value
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/doc "The value of the  representation"
+  :db.install/_attribute :db.part/db}
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :representation/locale
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/doc "The locale of the value based on IETF BCP 47 language tag string"
+  :db.install/_attribute :db.part/db}
+
+  {:db/id #db/id[:db.part/db]
+   :db/ident :representation/concept
+   :db/valueType :db.type/ref
+   :db/cardinality :db.cardinality/one
+   :db/doc "The concept of the  representation"
+   :db.install/_attribute :db.part/db}
+
+ 
+ ;; source attributes
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :source/id
+  :db/valueType :db.type/uuid
+  :db/cardinality :db.cardinality/one
+  :db/doc "The globally unique ID for a source"
+  :db.install/_attribute :db.part/db}
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :source/author
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/doc "The author of the source"
+  :db.install/_attribute :db.part/db}
+ 
+ {:db/id #db/id[:db.part/db]
+  :db/ident :source/title
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/doc "The title of the source"
+  :db.install/_attribute :db.part/db}
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :source/locator
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/doc "The locator of the source"
+  :db.install/_attribute :db.part/db}
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :source/examined
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/doc "The search performed on the source"
+  :db.install/_attribute :db.part/db}
+
+ 
+ {:db/id #db/id[:db.part/db]
+  :db/ident :source/accessed
+  :db/valueType :db.type/instant 
+  :db/cardinality :db.cardinality/one
+  :db/doc "When the source was accessed"
+  :db.install/_attribute :db.part/db}
+ 
+ {:db/id #db/id[:db.part/db]
+  :db/ident :source/repositories
+  :db/valueType :db.type/ref
+  :db/cardinality :db.cardinality/many
+  :db/doc "Repositories of the source"
+  :db.install/_attribute :db.part/db}
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :source/personas
+  :db/valueType :db.type/ref
+  :db/cardinality :db.cardinality/many
+  :db/doc "People mentioned in the source"
+  :db.install/_attribute :db.part/db}
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :source/contents
+  :db/valueType :db.type/ref
+  :db/cardinality :db.cardinality/many
+  :db/doc "The contents of the source either text, scan recordng, etc"
+  :db.install/_attribute :db.part/db}
+
+  ;; persona attributes
+
+ {:db/id #db/id[:db.part/db]
+  :db/ident :persona/id
+  :db/valueType :db.type/uuid
+  :db/cardinality :db.cardinality/one
+  :db/doc "The globally unique ID for a persona"
+  :db.install/_attribute :db.part/db}
+
+{:db/id #db/id[:db.part/db]
+  :db/ident :persona/name
+  :db/valueType :db.type/string
+  :db/cardinality :db.cardinality/one
+  :db/doc "The name of a  persona"
+  :db.install/_attribute :db.part/db} 
+]

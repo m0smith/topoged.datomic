@@ -1,0 +1,55 @@
+[
+ {:db/id #db/id [:db.part/user -90000]
+  :concept/name "Default Representation"
+  :concept/id #uuid "56d2767c-fd6c-4665-b71a-0c3dc82e92b3"
+  :concept/key :rep-default
+  :concept/representations [{:db/id #db/id [:db.part/user -99000]
+                             :representation/id #uuid "56d2769a-514f-4ce6-8785-656ebf26cee9"
+                             :representation/value    "Default Representation"
+                             :representation/locale   "en-US"}]
+  }
+
+  {:db/id #db/id [:db.part/user -90001]
+   :concept/name "ISO 3166-1 alpha-2 codes"
+   :concept/id #uuid "56d276bf-56d8-4563-9b68-3707d73f03af"
+   :concept/key :rep-ISO-3166-1-2
+   :concept/representations [{:db/id #db/id [:db.part/user -99001]
+                              :representation/id #uuid "56d276c8-42c1-41ff-b805-3e7b7c22f18a"
+                              :representation/value    "ISO 3166-1 alpha-2 codes"
+                              :representation/locale   "en-US"}]
+   }
+
+ {:db/id #db/id [:db.part/user -10000]
+  :concept/name "Utah Birth Certificate"
+  :concept/id #uuid "56d25c94-01bf-4882-80ff-fd682151850d"
+  :concept/representations [{:db/id #db/id [:db.part/user -12000]
+                             :representation/id #uuid "56d266d1-7d13-449f-8f70-c879b28f4ef8"
+                             :representation/concept  #db/id[:db.part/user -99000]
+                             :representation/value    "Utah Birth Certificate"
+                             :representation/locale   "en-US"}]
+  }
+
+  {:db/id #db/id [:db.part/user -10001]
+   :concept/name "Country"
+   :concept/id #uuid "56d2757b-4832-4027-8475-a16fa3fa1559"
+   :concept/key :place-country
+   :concept/representations [{:db/id #db/id [:db.part/user -12001]
+                              :representation/id #uuid "56d275ac-8f4f-486a-9ef1-0b46065a035b"
+                              :representation/concept  #db/id[:db.part/user -99000]
+                              :representation/value    "Country"
+                              :representation/locale   "en-US"}]
+   }
+
+ {:db/id #db/id [:db.part/user]
+  :concept/name "State"
+  :concept/id #uuid "56d31353-171a-42c9-98e2-13a12cf03cc4"
+  :concept/key :place-state
+  :concept/representations [{:db/id #db/id [:db.part/user]
+                              :representation/id #uuid "56d31372-f8ea-4f03-ac7c-19a666c863cf"
+                              :representation/concept  #db/id[:db.part/user -99000]
+                              :representation/value    "State"
+                              :representation/locale   "en-US"}]
+   }
+
+ ]
+ 
